@@ -2,6 +2,26 @@
 
 ## 一、语法练习 + 模拟
 
+[合法日期 - 蓝桥云课 (lanqiao.cn)](https://www.lanqiao.cn/problems/541/learning/?page=1&first_category_id=1&sort=students_count&second_category_id=3&tags=模拟)
+
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+  // 请在此输入您的代码
+  int d, m;
+  cin >> m >> d;
+  int ar[12] ={31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+  if (m <= 12 && m > 0 && d <= ar[m-1]) {
+    cout << "yes";
+  }
+  else
+    cout << "no";
+  return 0;
+}
+```
+
 
 
 ## 二、基础算法
@@ -21,6 +41,12 @@ P1873[Algorithm-practice-code/luogu/p1873.cpp at master · AnXinrui/Algorithm-pr
 
 
 [P2440 [Algorithm-practice-code/luogu/p2440.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p2440.cpp)
+
+
+
+[P2678 [NOIP2015 提高组\] 跳石头 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)](https://www.luogu.com.cn/problem/P2678)
+
+代码：
 
 ### 2.前缀和
 
