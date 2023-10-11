@@ -46,7 +46,7 @@ P1873[Algorithm-practice-code/luogu/p1873.cpp at master · AnXinrui/Algorithm-pr
 
 [P2678 [NOIP2015 提高组\] 跳石头 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)](https://www.luogu.com.cn/problem/P2678)
 
-代码：
+代码：[Algorithm-practice-code/luogu/p2678.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p2678.cpp)
 
 ### 2.前缀和
 
