@@ -4,23 +4,7 @@
 
 [合法日期 - 蓝桥云课 (lanqiao.cn)](https://www.lanqiao.cn/problems/541/learning/?page=1&first_category_id=1&sort=students_count&second_category_id=3&tags=模拟)
 
-```cpp
-#include <iostream>
-using namespace std;
-int main()
-{
-  // 请在此输入您的代码
-  int d, m;
-  cin >> m >> d;
-  int ar[12] ={31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-  if (m <= 12 && m > 0 && d <= ar[m-1]) {
-    cout << "yes";
-  }
-  else
-    cout << "no";
-  return 0;
-}
-```
+
 
 
 
@@ -47,6 +31,22 @@ P1873[Algorithm-practice-code/luogu/p1873.cpp at master · AnXinrui/Algorithm-pr
 [P2678 [NOIP2015 提高组\] 跳石头 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)](https://www.luogu.com.cn/problem/P2678)
 
 代码：[Algorithm-practice-code/luogu/p2678.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p2678.cpp)
+
+**10.12**
+
+[扫地机器人 - 蓝桥云课 (lanqiao.cn)](https://www.lanqiao.cn/problems/199/learning/?page=1&first_category_id=1&sort=students_count&name=机器人)
+
+题解：[第十届蓝桥杯省赛C++C/研究生组,第十届蓝桥杯省赛JAVAC/研究生组——扫地机器人题解（二分）_上烟雨心上尘的博客-CSDN博客](https://blog.csdn.net/weixin_64632836/article/details/133777504?spm=1001.2014.3001.5502)
+
+[P3853 [TJOI2007\] 路标设置 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)](https://www.luogu.com.cn/problem/P3853)
+
+> 公路的起点和终点保证已设有路标 
+
+代码：[Algorithm-practice-code/luogu/p1182.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p1182.cpp)
+
+[P1182 数列分段 Section II - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)](https://www.luogu.com.cn/problem/P1182)
+
+代码：
 
 ### 2.前缀和
 
