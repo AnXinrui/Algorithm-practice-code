@@ -45,7 +45,7 @@ signed main()
         if(t<0)l=mid;
         else if(!t)return cout << 0,0;
         else r=mid-1;
-        cout << mid << ' ' << abs(t) << endl;
+        // cout << mid << ' ' << abs(t) << endl;
         res=min(res,abs(t));
     }
     cout << res << '\n';
