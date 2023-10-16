@@ -2,7 +2,9 @@
 
 ## 一、语法练习 + 模拟
 
+[260. 只出现一次的数字 III - 力扣（LeetCode）](https://leetcode.cn/problems/single-number-iii/?envType=daily-question&envId=2023-10-16)
 
+代码：[Algorithm-practice-code/lc/l260.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/lc/l260.cpp)
 
 
 
@@ -39,6 +41,12 @@ P1873[Algorithm-practice-code/luogu/p1873.cpp at master · AnXinrui/Algorithm-pr
 [P3853 路标设置 - 洛谷
 
 代码：[Algorithm-practice-code/luogu/p1182.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p1182.cpp)
+
+**10.16**
+
+[P1719 最大加权矩形 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)](https://www.luogu.com.cn/problem/P1719)
+
+代码：[Algorithm-practice-code/luogu/p1719.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p1719.cpp)
 
 ### 2.前缀和
 
