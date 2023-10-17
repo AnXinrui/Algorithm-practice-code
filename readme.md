@@ -6,10 +6,6 @@
 
 代码：[Algorithm-practice-code/lc/l260.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/lc/l260.cpp)
 
-
-
-
-
 ## 二、基础算法
 
 ### 1.二分
@@ -65,6 +61,20 @@ P2367 语文成绩
 [P3397 地毯 - 洛谷](https://www.luogu.com.cn/problem/P3397)
 
 [Algorithm-practice-code/luogu/p3397.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p3397.cpp)
+
+**10.18**
+
+[P2004 领地选择 - 洛谷](https://www.luogu.com.cn/problem/P2004)
+
+代码：[Algorithm-practice-code/luogu/p2004.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p2004.cpp)
+
+[P3017 USACO11MAR Brownie Slicing G](https://www.luogu.com.cn/problem/P3017)
+
+代码：[Algorithm-practice-code/luogu/p3017.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p3017.cpp)
+
+[P1496 火烧赤壁 - 洛谷](https://www.luogu.com.cn/problem/P1496)
+
+代码：[Algorithm-practice-code/luogu/p1314.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p1314.cpp)
 
 ### 3.双指针
 
