@@ -42,17 +42,31 @@ P1873[Algorithm-practice-code/luogu/p1873.cpp at master · AnXinrui/Algorithm-pr
 
 代码：[Algorithm-practice-code/luogu/p1182.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p1182.cpp)
 
-**10.16**
+https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p1719.cpp)
+
+### 2.前缀和与差分
 
 [P1719 最大加权矩形 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)](https://www.luogu.com.cn/problem/P1719)
 
-代码：[Algorithm-practice-code/luogu/p1719.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p1719.cpp)
+代码：
 
-### 2.前缀和
+[Algorithm-practice-code/luogu/p1719.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p1719.cpp)
 
-### 3. 差分
+[P1314 [NOIP2011 提高组\] 聪明的质监员 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)](https://www.luogu.com.cn/problem/P1314)
 
-### 4.双指针
+代码：
+
+[Algorithm-practice-code/luogu/p1314.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p1314.cpp)
+
+P2367 语文成绩
+
+[Algorithm-practice-code/luogu/p2367.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p2367.cpp)
+
+[P3397 地毯 - 洛谷](https://www.luogu.com.cn/problem/P3397)
+
+[Algorithm-practice-code/luogu/p3397.cpp at master · AnXinrui/Algorithm-practice-code (github.com)](https://github.com/AnXinrui/Algorithm-practice-code/blob/master/luogu/p3397.cpp)
+
+### 3.双指针
 
 ## 三、数据结构
 
