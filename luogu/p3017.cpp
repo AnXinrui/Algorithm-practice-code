@@ -6,19 +6,15 @@ int a[1010][1010], s[1010][1010];
 int r, c, x, y;
 
 bool check(int m) {
-    int lrow = 0, lcol = 0;
+    int lrow = 0;
     int rows = 0;
     for (int i = 1; i <= r; i ++) {
         int num = 0, sum = 0;
-        // lcol = 0;
         for (int j = 1; j <= c; j ++) {
-            // if (sum + (s[i][j] - s[lrow][j]) - (s[i][lcol] - s[lrow][lcol]) < m)
-            //     sum += (s[i][j] - s[lrow][j]) - (s[i][lcol] - s[lrow][lcol]);
             if (sum + (s[i][j]-s[i][j-1])-(s[lrow][j]-s[lrow][j-1]) < m)
                 sum += (s[i][j]-s[i][j-1])-(s[lrow][j]-s[lrow][j-1]);
             else {
                 sum = 0;
-                // lcol = j;
                 num ++;
             }
         }
@@ -28,7 +24,6 @@ bool check(int m) {
         }
 
     }
-    // cout << m << ' ' << (rows >= m) << endl;
     return rows >= x;
 }
 
@@ -44,7 +39,6 @@ int main() {
     //m 越小越容易成功
     while (left < right) {
         int m = left + right + 1 >> 1;
-        // cout << m << endl;
         if (check(m))
             left = m;
         else
