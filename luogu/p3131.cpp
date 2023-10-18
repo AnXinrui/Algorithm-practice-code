@@ -13,7 +13,7 @@ int main() {
     }
     int ans = 0;
     for (int i = 1; i <= n; i ++)
-        for (int j = i; j <= n; j ++) {
+        for (int j = i + ans; j <= n; j ++) {
             int s = a[j] - a[i-1];
             if (s % 7 == 0 && j - i + 1 > ans)
                 ans = j - i + 1;
