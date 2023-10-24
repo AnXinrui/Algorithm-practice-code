@@ -19,14 +19,14 @@ int main() {
         insert(i, i, a[i]);
     }
     // 整数、负数
-    int pn = 0, nn = 0;
+    long long pn = 0, nn = 0;
     for (int i = 2; i <= n; i ++) {
         if (b[i] > 0)
             pn += b[i];
         else if (b[i] < 0)
             nn += b[i];
     }
-    int cnt = max(pn, -nn);
+    long long cnt = max(pn, -nn);
     int nums = abs(pn + nn) + 1;
     cout << cnt << endl << nums << endl;
 
