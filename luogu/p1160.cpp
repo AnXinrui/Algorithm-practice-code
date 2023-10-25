@@ -1,140 +1,77 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
-
-vector<int> a;
-// 瓒呮椂
-int main() {
-    int n;
-    cin >> n;
-    a.push_back(1);
-    for (int i = 2; i <= n; i ++) {
-        int k, p;
-        cin >> k >> p;
-        if (p == 1)
-            a.insert(find(a.begin(), a.end(), k) + 1, i);
-        else
-            a.insert(find(a.begin(), a.end(), k), i);
-
-    }
-
-    int m;
-    cin >> m;
-    while (m --) {
-        int x;
-        cin >> x;
-        if (find(a.begin(), a.end(), x) != a.end())
-            a.erase(find(a.begin(), a.end(), x));
-    }
-    for (auto i: a)
-        cout << i<<' ';
-    return 0;
-}
-
-
-
-
-#include <iostream>
-#include <cstring>
 
 using namespace std;
 
 const int N = 1e5 + 10;
 
-struct node
-{
-    // l,r鏄痠dx
-    int l = -1, r = -1, v = -1;
-}a[N];
-
-int h[N], idx;
-int head;
+//h表示第i位同学的idx是多少，e表示这个点的值是多少，l表示这个点左边的点的编号，r表示这个点右边的点的编号 
+int h[N], e[N], l[N], r[N], idx;
 
 void init() {
-    a[idx].v = 1;
-    head = idx;
-    h[1] = idx ++;
+	// 0号点表示左端点，1号点表示右端点
+	r[0] = 1;
+	l[1] = 0; 
+	idx = 2;
 }
 
-void add_to_right(int k, int i) {
-    int j = h[k];
-    a[idx].v = i;
-    int q = a[j].r;
-    a[idx].r = q;
-    if (q != -1)
-        a[q].l = idx;
-    a[j].r = idx;
-    a[idx].l = j;
-    h[i] = idx ++;
+// 在节点a（编号）的左边插入一个数x idx也是编号
+void insert_l(int a, int x) {
+	e[idx] = x;
+	r[idx] = a;
+	l[idx] = l[a];
+	r[l[a]] = idx;
+	l[a] = idx;
+	h[x] = idx ++;
 }
 
-void add_to_left(int k, int i) {
-    int j = h[k];
-    a[idx].v = i;
-    int q = a[j].l;
-    a[idx].l = q;
-    if (q!=-1)
-        a[q].r = idx;
-    a[j].l = idx;
-    a[idx].r = j;
-    if (head == j)
-        head = idx;
-    h[i] = idx ++;
-
+//在节点a（编号）的右边插入一个数x idx也是编号
+void insert_r(int a, int x) {
+	e[idx] = x; //先在idx记录这个值 
+    l[idx] = a; //左边是a
+    r[idx] = r[a]; //右边是r[a]
+    l[r[a]] = idx; //让原来a的右边的数的左边变为idx
+    r[a] = idx; //a的右边 
+    h[x] = idx ++;
 }
 
-void remove(int i) {
-    if (h[i] == -1)
-        return;
-    int j = h[i];
-    h[i] = -1;
-    int ll = a[j].l, rr = a[j].r;
-    if (ll != -1)
-        a[ll].r = rr;
-    if (rr != -1)
-        a[rr].l = ll;
+void remove(int a) {
+	r[l[a]] = r[a];
+	l[r[a]] = l[a];
 }
 
-// 涓戦檵鐨勫弻閾捐〃锛岃嚜宸遍兘瑙夊緱涓戦檵
 int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0); 
+	
+	int n;
+	cin >> n;
+	
+	init();
+	insert_r(0, 1);
+	
+	for (int i = 2; i <= n; i ++) {
+		int k, p;
+		cin >> k >> p;
+		if (p) 
+			insert_r(h[k], i);
+		else 
+			insert_l(h[k], i);
+	}
 
-
-    init();
-
-    int n;
-    cin >> n;
-    for (int i = 2; i <= n; i ++) {
-        int k, p;
-        cin >> k >> p;
-        if (p == 1)
-            add_to_right(k, i);
-        else
-            add_to_left(k, i);
-        // for (int j = 0; j < idx; j ++) {
-        //     cout << a[j].v << ' '<<a[j].l << ' '<<a[j].r << endl;
-        // }
-        // cout << head<<endl;
-    }
-
-    // for (int i = h[head]; i != -1; i = a[i].r) {
-    //     cout << a[i].v << ' ';
-    // }
-
-    int m;
-    cin >> m;
-    while (m --) {
-        int i;
-        cin >> i;
-        remove(i);
-
-    }
-    for (int i = head; i != -1; i = a[i].r) {
-        cout << a[i].v << ' ';
-    }
-    cout << endl;
-
-    return 0;
-}
-
-//  2 3 4 1
+	int m;
+	cin >> m;
+	
+	while (m --) {
+		int x;
+		cin >> x;
+		
+		if (h[x] != -1)
+			remove(h[x]);
+	}
+	
+	for (int i = r[0]; i != 1; i = r[i])
+		cout << e[i] << ' ';
+		
+	return 0;
+} 
