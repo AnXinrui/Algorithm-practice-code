@@ -1,34 +1,51 @@
 #include <iostream>
+#include <queue>
 
 using namespace std;
-int st[101];
-int a[108], idx = 0;
 
-// æˆ‘å†™çš„ä¸å¤ªä¼˜é›…
-int main() {
-    int n, m;
-    cin >> n >> m;
-    int i = 1, cnt = 0;
-    while (idx < n) {
-        if (st[i]) {
-            i ++ ;
-            if (i == n + 1)
-                i = 1;
-            continue;
-        }
-        ++ cnt;
-        if (cnt == m) {
-            cnt = 0;
-            st[i] = 1;
-            a[++ idx] = i;
-        }
-        i ++ ;
-        if (i == n + 1)
-            i = 1;
+int e[150], head, ne[250];
 
-
-    }
-    for (int i = 1; i <= n; i ++)
-        cout << a[i] << ' ';
-    return 0;
+// ²åÈë1 
+void init() {
+	head = -1;
+	e[1] = 1;
+	ne[1] = head;
+	head = 1;
 }
+
+
+int main() {
+	int n, m;
+	cin >> n >> m;
+	
+	init();
+	for (int i = 2; i <= n; i ++) {
+		e[i] = i;
+		ne[i] = ne[i - 1];
+		ne[i - 1] = i;
+	}
+	// Ñ­»·Á´±í 
+	ne[n] = head;
+	
+	// c ¼ÇÂ¼Î´³öÈ¦ÈËÊý£¬ c ¼ÇÂ¼µ±Ç°Êýµ½µÚ¼¸¸öÈË 
+	int c = n, cnt = 0;
+	queue<int> ans;
+	int i = head;
+	while (c) {
+		++ cnt;
+		if (cnt == m - 1) {
+			ans.push(e[ne[i]]);
+			-- c;
+			ne[i] = ne[ne[i]];
+			cnt = 0;
+		}
+		i = ne[i];
+	}
+	
+	while (!ans.empty()) {
+		cout << ans.front() << ' ';
+		ans.pop();
+	}
+	
+	return 0;
+} 
