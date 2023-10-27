@@ -5,6 +5,7 @@ using namespace std;
 
 stack<int> stk;
 
+// 乘除优先运算，使得stk只有加减 
 int main() {
     string s;
     cin >> s;

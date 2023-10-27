@@ -1,54 +1,44 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <cmath>
-#include <iomanip>
+#include<bits/stdc++.h>
+#define ri register int
+#define I __inline__ __attribute((always_inline)) 
 using namespace std;
-#define int long long
-#define INF 0x3f3f3f3f3f3f3f3f
-#define N (int)(2e5+15)
-
-int n,m,s,l,r,mid;
-int w[N],v[N],le[N],ri[N],res=INF,p[N],q[N];
-signed main()
-{
-    ios::sync_with_stdio(0);
-    cin.tie(0);cout.tie(0);
-    // freopen("check.in","r",stdin);
-    // freopen("check.out","w",stdout);
-    cin >> n >> m >> s;
-    for(int i=1; i<=n; i++)
-    {
-        cin >> w[i] >> v[i];
-        r=max(r,w[i]);
-    }
-    for(int i=1; i<=m; i++)
-        cin >> le[i] >> ri[i];
-    while(l<r)
-    {
-        int mid=(l+r+1)>>1;
-        for(int i=1; i<=n; i++)
-        {
-            if(w[i]>mid)
-                q[i]=q[i-1]+1,p[i]=p[i-1]+v[i];
-            else 
-                q[i]=q[i-1],p[i]=p[i-1];
+I char nc(){
+    static char buf[100000],*p1=buf,*p2=buf;
+    return p1==p2&&(p2=(p1=buf)+fread(buf,1,100000,stdin),p1==p2)?EOF:*p1++;
+}
+I int read1( ){
+    static char c=nc();ri x,f=1;
+    for(;c>'9'||c<'0';c=nc()) if(c=='-') f=-1;
+    for(x=0;c<='9'&&c>='0';c=nc()) x=(x<<3)+(x<<1)+c-48;
+    return x*f;
+}
+#define N 100005
+#define read(a) a=read1()
+int n,d,h1,h2,t1,t2,ans=1e9;
+int q1[N],q2[N];
+struct node{int x, y;}a[N];
+I bool cmp(node a,node b)
+{return a.x < b.x;}
+int main() {
+    ri l = 1, i, r;h1 = h2 = 1;
+    read(n);read(d);
+    for(i=1; i<=n; ++i) read(a[i].x),read(a[i].y);
+    sort(a+1,a+n+1,cmp);
+    cout <<"--------------------"<<endl;
+    for(l=1,r=0;l<=n;++l) {
+        while(h1<=t1&&q1[h1]<l) ++h1;                                 // 维护滑动窗口
+        while(h2<=t2&&q2[h2]<l) ++h2;
+        while(a[q1[h1]].y-a[q2[h2]].y < d && r < n) {
+            ++r;
+            while(a[q1[t1]].y < a[r].y && h1<=t1) --t1;q1[++t1]=r;          //维护单调队列
+            while(a[q2[t2]].y > a[r].y && h2<=t2) --t2;q2[++t2]=r; 
         }
-        int x=0;
-        for(int i=1; i<=m; i++)
-            x+=(q[ri[i]]-q[le[i]-1])*(p[ri[i]]-p[le[i]-1]);
-        int t=s-x;
-        if(t<0)l=mid;
-        else if(!t)return cout << 0,0;
-        else r=mid-1;
-        // cout << mid << ' ' << abs(t) << endl;
-        res=min(res,abs(t));
+        if(a[q1[h1]].y-a[q2[h2]].y >= d) ans = min(ans,a[r].x-a[l].x);       //更新答案
+        cout << a[q1[h1]].x << ' ' << a[q1[h1]].y << endl;
+        cout << a[q2[h2]].x << ' ' << a[q2[h2]].y << endl;
+        cout << ans << endl;
+        cout << endl;
     }
-    cout << res << '\n';
+    printf("%d",ans>=1e9?-1:ans);
     return 0;
 }
-

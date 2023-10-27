@@ -66,8 +66,11 @@ int main() {
 		int x;
 		cin >> x;
 		
-		if (h[x] != -1)
+		if (h[x] != -1) {
 			remove(h[x]);
+			h[x] = -1;
+		}
+			
 	}
 	
 	for (int i = r[0]; i != 1; i = r[i])
