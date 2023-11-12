@@ -26,20 +26,22 @@ int main() {
         {
             m -= n * a[i];
             sco += n;
+
         }
         else if (m < n * a[i]) {
-            // int j = 1;
-            // cout << m << a[i];
             while (m - a[i] >= 0) {
                 m -= a[i];
 
                 sco ++;
+                if (i == k - 1)
+                    sco ++;
             }
             cout << sco;
             return 0;
         }
         if (!m) break;
     }
+    if (sco == n*k) sco+= n;
     cout << sco;
 
     return 0;
