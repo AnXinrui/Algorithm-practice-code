@@ -15,7 +15,7 @@ int main() {
 
     LL x;
     cin >> x;
-    LL l = 0, r = 14;
+    LL l = 0, r = 15;
     while (l < r) {
         LL m = (l+r)/2;
         LL tmp = pow(m, m);

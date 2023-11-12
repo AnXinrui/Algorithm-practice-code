@@ -1,76 +1,49 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <array>
+#include <vector>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
-typedef long long LL;
-typedef pair<int, int> PII;
-
-const int inf = 0x3f3f3f3f;
-const int mod = 1e9 + 7;
-const int N = 1e6 + 10;
-int p[6][50];
-vector<string> ss;
-
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    int t;
-    cin >> t;
-    int ans = 0;
-    for (int i = 0; i < t; i ++) {
+    int n;
+    cin >> n;
+    array<vector<string>, 6> f;
+    while (n --) {
         string s;
         cin >> s;
-        ss.push_back(s);
-
-        int sum = 0, n = s.size();
-        for (int j = 0; j < n; j ++) {
-            sum += s[j] - '0';
-            // p[j+1][sum] ++;
-        }
-        p[n][sum] ++;
-        // sum = 0;
-        // for (int j = n - 1; j >= 0; j --) {
-        //     sum += s[j] - '0';
-        //     e[n-j][sum] ++;
-        // }
+        f[s.size()].push_back(s);
     }
-
-    for (int i = 0; i < t; i ++) {
-        string s = ss[i];
-        int n = s.size();
-
-        vector<int> a(n + 1);
-        for (int j = 0; j < n; j ++) {
-            int v = s[j] - '0';
-            a[j+1] = a[j] + v;
-        }
-        ans += p[n][a[n]];
-        for (int j = 0; j < n; j ++) {
-            int pre = a[j+1], ed = a[n] - a[j+1];
-            // if ((j + 1 > n - j - 1) && pre > ed) {
-            //     ans += p[j+1-(n-j-1)][pre-ed];
-            // }
-            if ((j + 1 < n - j - 1) && pre < ed) {
-                ans += p[n-(j+1)*2][ed-pre];
-            }
-            else if ((j + 1 > n - j - 1) && pre > ed) {
-                ans += p[j+1-(n-j-1)][pre-ed];
+    long long ans = 0;
+    for (int i = 1; i <= 5; i ++)
+        for (int j = 1; j <= 5; j ++)
+            if ((i + j) % 2 == 0) {
+                array<int, 100> cnt{};
+                int h = (i + j) / 2;
+                for (auto x: f[i]) {
+                    int s = 50;
+                    for (int k = 0; k < i; k ++) {
+                        if (k < h)
+                            s += x[k] - '0';
+                        else
+                            s -= x[k] - '0';
+                    }
+                    cnt[s] ++;
+                }
+                for (auto x: f[j]) {
+                    int s = 50;
+                    for (int k = 0; k < j; k ++) {
+                        if (i + k < h)
+                            s -= x[k] - '0';
+                        else
+                            s += x[k] - '0';
+                    }
+                    ans += cnt[s];
+                }
 
             }
 
-        }
-        ans --;
-        // cout << ans << endl;
-    }
-    cout << ans << endl;
-
+    cout << ans << "\n";
     return 0;
 }
-
-/*
-10 10 20
-
-20 30 30
-
-*/
