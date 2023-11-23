@@ -9,7 +9,7 @@ const int inf = 0x3f3f3f3f;
 const int mod = 1e9 + 7;
 const int N = 4e4;
 
-int a[N+10];
+LL a[N+10];
 
 int main() {
     ios::sync_with_stdio(false);
@@ -21,7 +21,7 @@ int main() {
         string s = to_string(i);
         if (s == string(s.rbegin(), s.rend())) {
             for (int j = i; j <= N; j ++)
-                a[j] += a[j-i];
+                a[j] = (a[j] + a[j-i]) % mod;
         }
     }
 

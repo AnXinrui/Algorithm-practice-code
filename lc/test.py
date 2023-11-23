@@ -1,12 +1,8 @@
-l, r = input().split()
-l = int(l)
-r = int(r)
-cnt = 0
-for i in range(l, r + 1):
-    s = str(i)
-    for ss in s:
-        if ss == '2':
-            cnt += 1
-print(cnt)
-
-
+a = [-1] * 3
+print(a)
+a[2]=3
+print(a)
+f = [[] for _ in range(4)]
+print(f)
+f[2]=2
+print(f)
